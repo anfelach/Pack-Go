@@ -1,0 +1,191 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+        background: #F4F1DE;
+    }
+    
+    @media all and(max-width: 1024px) {
+        .item {
+            width: 100%;
+        }
+    }
+    
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 63px;
+        padding: 20px 100px;
+        background-color: #81B29A;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+    }
+    
+    .PostLabel {
+        font-size: 2em;
+        color: #fff;
+        user-select: none;
+    }
+    
+    .linearback {
+        position: absolute;
+        width: 100%;
+        height: 140%;
+        left: 0px;
+        top: 63px;
+        background: linear-gradient(180deg, #81B29A 0%, rgba(161, 194, 178, 0.684375) 11.87%, #F4F1DE 22.63%);
+    }
+    
+    .linearback p {
+        position: absolute;
+        left: 118px;
+        top: 45px;
+        font-size: 2em;
+        color: #fff;
+        user-select: none;
+    }
+    
+    .form {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 20pxpx;
+        top: 400px;
+    }
+    
+    label {
+        font-style: bold;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 100%;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .namel {
+        position: absolute;
+        top: 0px;
+        left: 300px;
+        color: #81B29A;
+    }
+    
+    .destinationl {
+        position: absolute;
+        top: 100px;
+        left: 300px;
+        color: #81B29A;
+    }
+    
+    .descriptionl {
+        position: absolute;
+        top: 200px;
+        left: 300px;
+        color: #81B29A;
+    }
+    
+    .pricel {
+        position: absolute;
+        top: 450px;
+        left: 300px;
+        color: #81B29A;
+    }
+    
+    .AvailPlacl {
+        position: absolute;
+        top: 550px;
+        left: 300px;
+        color: #81B29A;
+    }
+    
+    .name {
+        position: absolute;
+        top: 0px;
+        left: 500px;
+    }
+    
+    .destination {
+        position: absolute;
+        top: 100px;
+        left: 500px;
+    }
+    
+    .description {
+        position: absolute;
+        top: 200px;
+        left: 500px;
+    }
+    
+    .price {
+        position: absolute;
+        top: 450px;
+        left: 500px;
+    }
+    
+    .AvailPlac {
+        position: absolute;
+        top: 550px;
+        left: 500px;
+    }
+    
+    .name,
+    .destination,
+    .description,
+    .AvailPlac,
+    .price {
+        border: 2px solid #81B29A;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+        width: 400px;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        color: #5f5c5c;
+        background: #81B29A;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    
+    .description {
+        height: 200px;
+    }
+    
+    input:hover {
+        cursor: pointer;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+        transform: translateY(-3px);
+        border: 2px solid #81B29A;
+    }
+    
+    input:focus {
+        outline: none;
+        border-color: #81B29A;
+        box-shadow: 0 0 5px#81B29A;
+    }
+    
+    button[type="submit"] {
+        position: absolute;
+        top: 700px;
+        left: 800px;
+        background-color: #81B29A;
+        color: #5f5c5c;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 100%;
+    }
+    
+    button[type="submit"]:hover {
+        background-color: #81B29A;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+        transform: translateY(-3px);
+        border: 2px solid #81B29A;
+    }
