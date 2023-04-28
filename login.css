@@ -17,7 +17,7 @@
     position: absolute;
     width: 470px;
     height: 43px;
-    left: 82px;
+    left: 150px;
     top: 103px;
     font-style: normal;
     font-weight: 700;
@@ -29,31 +29,25 @@
 
 .Ready-to {
     position: absolute;
-    width: 298px;
-    height: 36px;
-    left: 168px;
-    top: 173px;
+   
+    left: 200px;
+    top: 178px;
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 35px;
     line-height: 100%;
     color: #FFFDFD;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .PackGo {
-    position: absolute;
-    width: 298px;
-    height: 36px;
-    left: 286px;
-    top: 173px;
     font-family: 'Outfit';
     font-style: normal;
-    font-weight: 600;
-    font-size: 30px;
+    font-weight:bolder;
+    font-size: 40px;
     line-height: 100%;
-    color: #81B29A;
+    color: #65a586;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -138,20 +132,21 @@ label {
 .usernl {
     position: absolute;
     top: 132px;
-    left: 60px;
+    left: 40px;
+    font-size:large;
     color: #5f5c5c;
 }
 
 .useri {
     position: absolute;
-    top: 134px;
-    left: 346px;
+    top: 132px;
+    left: 325px;
 }
 
 .passi {
     position: absolute;
     top: 184px;
-    left: 346px;
+    left: 325px;
 }
 
 i {
@@ -161,7 +156,8 @@ i {
 .passwl {
     position: absolute;
     top: 184px;
-    left: 60px;
+    left: 40px;
+    font-size: large;
     color: #5f5c5c;
 }
 
@@ -170,6 +166,8 @@ i {
     top: 238px;
     left: 140px;
 }
+
+
 
 .remember label {
     color: #5f5c5c;
@@ -183,7 +181,7 @@ button[type="submit"] {
     color: #5f5c5c;
     padding: 12px 20px;
     border: none;
-    border-radius: 8px;
+    border-radius: 20px;
     cursor: pointer;
     font-style: normal;
     font-weight: 700;
@@ -200,24 +198,29 @@ button[type="submit"]:hover {
 
 .Signup {
     position: absolute;
-    top: 375px;
-    left: 321px;
-    text-decoration: none;
+    top: 325px;
+    left: 265px;
+    text-decoration:underline;
     font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
+    font-weight:bold;
+    font-size:medium;
     line-height: 100%;
     color: #5f5c5c;
+    transition: all .5s ease;
+}
+.Signup:hover{
+    color:#D86F53;
+    transition: all .5s ease;
 }
 
 .Noaccount {
     position: absolute;
-    top: 350px;
-    left: 50px;
+    top: 310px;
+    left: 100px;
     text-decoration: none;
     font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
+    font-weight: 800;
+    font-size:medium;
     line-height: 100%;
     color: #5f5c5c;
 }
@@ -225,11 +228,30 @@ button[type="submit"]:hover {
 .agency
 {
     position: absolute;
-    top: 410px;
+    top: 450px;
     left: 59px ;
     text-decoration: none;
     font-size: 25px;
     line-height: 100%;
     font-weight: 700;
     color: #5f5c5c;
+}
+.agency_login{
+    position: absolute;
+    top: 522px;
+    left: 380px;
+    width: 150px;
+    height: 30px;
+    background-color:#e4876d;
+    color: #f6ebeb;
+    border-radius: 20px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 0.5rem;
+    text-align: center;
+    
+   
 }

@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 * {
     margin: 0;
     padding: 0;
@@ -90,7 +93,6 @@ header {
 }
 
 .navigation a:hover::after {
-    transform: scaleX(1);
     transform-origin: left;
 }
 
@@ -100,7 +102,7 @@ header {
     background-color: #85816B;
     border: 2px solid #85816B;
     outline: none;
-    border-radius: 6px;
+    border-radius: 30px;
     cursor: pointer;
     font-size: 1.1em;
     color: #fff;
@@ -116,19 +118,19 @@ header {
 }
 
 .Log-Sign:hover .log {
-    color: #000;
+    color: #ffffff;
 }
 
 .navigation .Log-Sign:hover {
-    background: #fff;
-    color: #000;
-    border: 2px solid #FFF;
+    background:#D86F53;
+    color: #ffffff;
+    border: 2px solid #D86F53;
 }
 
 .under-nav {
     position: absolute;
     width: 100%;
-    height: 587px;
+    height: 700px;
     top: 63px;
     background: url(images/wave.png) no-repeat;
     background-size: cover;
@@ -136,10 +138,10 @@ header {
 
 .map {
     position: absolute;
-    width: 800px;
-    height: 600px;
-    left: 150px;
-    top: 350px;
+    width: 1000px;
+    height:1000px;
+    left: 200px;
+    top: 450px;
     background: url(images/map.png) no-repeat;
     background-size: 60%;
 }
@@ -173,6 +175,7 @@ header {
 }
 
 .cities {
+    margin-top: 100px;
     position: absolute;
     top: 950px;
     width: 100%;
@@ -251,8 +254,11 @@ header {
     background: url(images/CONSTANTINE\ Gallery.png) no-repeat;
     background-size: cover;
 }
-
-h2 {
+.Annaba {
+    background: url(images/annaba.jpg)no-repeat;
+    background-size: cover;
+}
+#Dest {
     position: relative;
     width: 400px;
     height: 28px;
@@ -264,9 +270,10 @@ h2 {
     line-height: 28px;
     color: #505693;
     transition: color 0.3s ease;
+    text-decoration: none;
 }
 
-h2:hover {
+#Dest:hover {
     color: #81B29A;
 }
 
@@ -289,7 +296,7 @@ h2:hover {
     background-color: #505693;
 }
 
-h3 {
+#Agen {
     position: absolute;
     width: 365px;
     height: 28px;
@@ -301,9 +308,10 @@ h3 {
     line-height: 28px;
     color: #505693;
     transition: color 0.3s ease;
+    text-decoration: none;
 }
 
-h3:hover {
+#Agen:hover {
     color: #81B29A;
 }
 
