@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #F4F1DE;
+    overflow-x: hidden;
+}
+
+@media all and(max-width: 1024px) {
+    .item {
+        width: 100%;
+    }
+}
+
+
+/* under-nav */
+
+section {
+    position: relative;
+    top: 63px;
+    height: 511px;
+    width: 100%;
+    background: url(../images/trips.png) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+section input {
+    position: absolute;
+    top: 220px;
+    height: 40px;
+    width: 60%;
+    background: #FFFFFF;
+    opacity: 0.8;
+    border-radius: 50px;
+    border: none;
+    padding: 5px 12px;
+}
+
+section input:focus {
+    outline: none;
+}
+
+h2 {
+    position: absolute;
+    top: 100px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 63px;
+    color: #FFFFFF;
+}
+
+h3 {
+    position: absolute;
+    top: 300px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 63px;
+    color: #FFFFFF;
+}
+
+
+/* trips */
+
+.trips {
+    position: relative;
+    top: 303px;
+    width: 100%;
+    height: 750px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.trips a {
+    width: 30%;
+    height: 250px;
+    border-radius: 12px;
+    background-color: #85816B;
+    text-decoration: none;
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; */
+    opacity: 1;
+    color: white;
+}
+
+.trips a p {
+    position: relative;
+    top: 40%;
+    left: 35%;
+    font-size: 20px;
+}
+
+.trips a:hover {
+    transform: scale(1.1);
+    /* Scale up the div by 10% */
+    transition: transform 0.2s ease-in-out;
+    /* Add a smooth transition effect */
+    opacity: 0.9;
+}
+
+.trips a:hover .info {
+    visibility: hidden;
+}
+
+
+/* See more */
+
+.SeeMore {
+    position: relative;
+    top: 299px;
+    height: 100px;
+    width: 100%;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SeeMore a {
+    position: absolute;
+    top: 0px;
+    height: 50px;
+    width: 150px;
+    background-color: #81B29A;
+    text-decoration: none;
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.SeeMore a:hover {
+    background-color: #85816B;
+}
