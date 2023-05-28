@@ -162,11 +162,11 @@ label {
 
 .link {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 20px;
+    left: 80px;
     font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
+    font-weight: 00;
+    font-size: 17px;
     line-height: 100%;
     color: #5f5c5c;
 }

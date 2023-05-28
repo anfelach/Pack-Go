@@ -16,6 +16,7 @@ body {
     }
 }
 
+
 }
 h1,
 h2,
@@ -23,10 +24,9 @@ h3,
 h4,
 h5,
 h6,
-p{
+p {
     font-family: 'Poppins', sans-serif;
 }
-
 header {
     position: fixed;
     top: 0;
@@ -40,13 +40,11 @@ header {
     align-items: center;
     z-index: 99;
 }
-
 .logo {
     font-size: 2em;
     color: #fff;
     user-select: none;
 }
-
 .navigation a {
     position: relative;
     font-size: 1.1em;
@@ -56,7 +54,6 @@ header {
     margin-left: 30px;
     line-height: 27.5px;
 }
-
 .navigation a::after {
     content: "";
     position: absolute;
@@ -70,12 +67,10 @@ header {
     transform: scaleX(0);
     transition: transform .5s;
 }
-
 .navigation a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
-
 .navigation .Log-Sign {
     width: 120px;
     height: 39.6px;
@@ -90,23 +85,19 @@ header {
     margin-left: 40px;
     transition: 0.5s;
 }
-
 .log {
     position: absolute;
     top: 2px;
     left: -14px;
 }
-
 .Log-Sign:hover .log {
     color: #000;
 }
-
 .navigation .Log-Sign:hover {
     background: #fff;
     color: #000;
     border: 2px solid #FFF;
 }
-
 .navigation .dropdown {
     position: relative;
     display: inline-block;
@@ -125,7 +116,6 @@ header {
     text-align: center;
     font-family: 'Poppins', sans-serif;
 }
-
 .dropbtn {
     background-color: transparent;
     color: white;
@@ -134,7 +124,6 @@ header {
     border: none;
     cursor: pointer;
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -144,7 +133,6 @@ header {
     z-index: 1;
     border-radius: 15px;
 }
-
 .dropdown-content a {
     color: white;
     padding: 12px 16px;
@@ -153,37 +141,36 @@ header {
     text-align: left;
     font-family: 'Poppins', sans-serif;
 }
-
 .dropdown:hover .log {
     color: #ffffff;
 }
-
 .navigation .dropdown:hover {
     background: #D86F53;
     color: #ffffff;
     border: 2px solid #D86F53;
 }
-
 @media (max-width: 971px) {
     .navigation a,
     .Log-Sign,
     .cities a {
         visibility: hidden;
     }
+    
     header,
     footer,
     .cities {
         overflow: hidden;
     }
+    
     footer .paragraph p {
         font-size: 18px;
         line-height: 25px;
     }
+    
     body {
         overflow-x: hidden;
     }
 }
-
 .c-cta {
     display: flex;
     align-items: center;
@@ -196,15 +183,10 @@ header {
         color: #81B29A;
     }
 }
-
-
-
 .c-slider {}
-
 .c-slider-init {
     overflow-x: hidden
 }
-
 .c-slide {
     display: inline-flex !important;
     align-items: center;
@@ -229,7 +211,6 @@ header {
         filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#00000000", endColorstr="#9c000000", GradientType=0);
     }
 }
-
 .c-slide-content {
     padding: 2rem;
     margin: 0 auto;
@@ -238,7 +219,6 @@ header {
     max-width: 1200px;
     font-family: 'Poppins', sans-serif;
 }
-
 .c-slide__title {
     font-size: 4em;
     text-transform: uppercase;
@@ -249,7 +229,6 @@ header {
     will-change: opacity, transform;
     color: white;
 }
-
 .c-slide__title--large,
 .c-slide__title--medium {
     display: block;
@@ -262,39 +241,32 @@ header {
     transition: 1s ease;
     color: white;
 }
-
 .c-slide__title--medium {
     font-size: 1.6em;
     line-height: 100px;
 }
-
 .c-slide__subtitle {
     text-transform: uppercase;
     letter-spacing: 3px;
     color: white;
 }
-
 .c-slide__body {
     margin-top: 0.7rem;
     opacity: 0;
     line-height: 27px;
     color: white;
 }
-
 .c-slide__info {
     transform: translateY(-150px);
     transition: 0.8s ease;
 }
-
 .c-wrap {
     padding: 2rem 0;
     overflow: hidden;
 }
-
 .c-wrap--small {
     max-width: 30%;
 }
-
 .c-wrap--line {
     position: relative;
     &:after {
@@ -310,11 +282,9 @@ header {
         transition-delay: 0.4s;
     }
 }
-
 .slick-list {
     overflow: visible !important;
 }
-
 .animateIn,
 .initialAnimation {
     .c-slide__title--large,
@@ -325,6 +295,7 @@ header {
         transform: translateY(0);
         opacity: 1;
     }
+    
     .c-wrap--line {
         &:after {
             left: 0;
@@ -333,56 +304,55 @@ header {
         }
     }
 }
-
 .slick-list {
     transition: 0.5s ease;
 }
-
 .u-scale-out {
     transform: scale(0.6) !important;
     transition: 0.5s ease;
 }
-
 .u-scale-in {
     transform: scale(1);
 }
-
 @media only screen and (max-width: 1300px) {
     .c-slide__title {
         font-size: 3em
     }
+    
     .c-slide__title--large {
         font-size: 2em;
     }
+    
     .c-wrap--small {
         max-width: 50%;
     }
 }
-
 @media only screen and ( max-width: 1100px) {
     .c-navigation {
         display: none;
     }
+    
     .c-header {
         justify-content: space-between;
     }
 }
-
 @media only screen and (max-width: 800px) {
     .c-slide__title--medium {
         font-size: 1.3em;
     }
+    
     .c-slide__title {
         font-size: 2.5em
     }
+    
     .c-slide__title--large {
         font-size: 1.5em;
     }
+    
     .c-wrap--small {
         max-width: 80%;
     }
 }
-
 .cities {
     margin-top: 100px;
     position: absolute;
@@ -393,7 +363,6 @@ header {
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-
 .cities div {
     width: 30%;
     height: 400px;
@@ -407,13 +376,11 @@ header {
     border-radius: 43px;
     transition: all 0.3s ease;
 }
-
 .cities div:hover {
     cursor: pointer;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
     transform: translateY(-5px);
 }
-
 .cities a {
     color: #fff;
     font-style: normal;
@@ -423,52 +390,42 @@ header {
     text-decoration: none;
     text-align: center;
 }
-
 .Algiers {
     background: url(../images/Algiers.jpg) no-repeat;
     background-size: cover;
 }
-
 .Setif {
     background: url('https://i.pinimg.com/564x/d8/e5/87/d8e5872ea6daf3d4dd889cf200b1f461.jpg?fbclid=IwAR0ME1zrXwO2vaVtxWVqded8JjIMbdW-_QRwRti53salOWafc1nw06cfMIQ') no-repeat;
     background-size: cover;
 }
-
 .Ghardaia {
     background: url('https://i.pinimg.com/564x/81/ff/75/81ff751c022b54b0e18fca93b79c7250.jpg?fbclid=IwAR1gzp1E9PPMtx2oVHpMKb36zqg4NRi6XDyvwlvBfq_I9_IWk7Ynii-7IB0') no-repeat;
     background-size: cover;
 }
-
 .Oran {
     background: url(../images/Oran.jpg) no-repeat;
     background-size: cover;
 }
-
 .Tlemcen {
     background: url(../images/Tlemcen.jpg ) no-repeat;
     background-size: cover;
 }
-
 .Bejaia {
     background: url(../images/Bejaia.jpg) no-repeat;
     background-size: cover;
 }
-
 .Tamanrasset {
     background: url('https://i.pinimg.com/originals/90/f4/35/90f435da8440d75144b407d9f95e7f9f.jpg') no-repeat;
     background-size: cover;
 }
-
 .Constantine {
     background: url(../images/CONSTANTINE\ Gallery.png) no-repeat;
     background-size: cover;
 }
-
 .Annaba {
     background: url(../images/annaba.jpg)no-repeat;
     background-size: cover;
 }
-
 #Dest {
     position: absolute;
     width: 400px;
@@ -483,11 +440,9 @@ header {
     transition: color 0.3s ease;
     text-decoration: none;
 }
-
 #Dest:hover {
     color: #81B29A;
 }
-
 .destination {
     position: absolute;
     top: 2580px;
@@ -497,7 +452,6 @@ header {
     overflow-y: hidden;
     white-space: nowrap;
 }
-
 .destination div {
     display: inline-block;
     width: 206px;
@@ -506,7 +460,6 @@ header {
     margin-left: 20px;
     background-color: #505693;
 }
-
 #Agen {
     position: absolute;
     width: 365px;
@@ -521,11 +474,9 @@ header {
     transition: color 0.3s ease;
     text-decoration: none;
 }
-
 #Agen:hover {
     color: #81B29A;
 }
-
 .agencies {
     position: absolute;
     top: 3010px;
@@ -535,7 +486,6 @@ header {
     overflow-y: hidden;
     white-space: nowrap;
 }
-
 .agencies div {
     display: inline-block;
     width: 206px;
@@ -544,7 +494,6 @@ header {
     margin-left: 20px;
     background-color: #505693;
 }
-
 footer {
     position: absolute;
     top: 3360px;
@@ -552,29 +501,25 @@ footer {
     height: 340px;
     background-color: #81B29A;
 }
-
 div::-webkit-scrollbar {
     width: 8px;
     /* width of the scrollbar */
 }
-
 div::-webkit-scrollbar-track {
     background-color: #f2f2f2;
     /* color of the scrollbar track */
 }
-
 div::-webkit-scrollbar-thumb {
     background-color: #ccc;
     /* color of the scrollbar thumb */
+    
     border-radius: 4px;
     /* rounded corners for the scrollbar thumb */
 }
-
 div::-webkit-scrollbar-thumb:hover {
     background-color: #aaa;
     /* color of the scrollbar thumb on hover */
 }
-
 .paragraph {
     position: absolute;
     top: 90px;
@@ -582,7 +527,6 @@ div::-webkit-scrollbar-thumb:hover {
     width: 40%;
     font-family: 'Poppins', sans-serif;
 }
-
 .paragraph p {
     font-style: normal;
     font-weight: 600;
@@ -591,7 +535,6 @@ div::-webkit-scrollbar-thumb:hover {
     color: #FFF;
     font-family: 'Poppins', sans-serif;
 }
-
 .logof {
     font-style: normal;
     font-weight: 600;
@@ -602,7 +545,6 @@ div::-webkit-scrollbar-thumb:hover {
     top: 20px;
     left: 20px;
 }
-
 .aboutus {
     position: absolute;
     top: 0;
@@ -610,7 +552,6 @@ div::-webkit-scrollbar-thumb:hover {
     right: 0px;
     width: 50%;
 }
-
 .aboutus p {
     font-style: normal;
     font-weight: 600;
@@ -621,9 +562,7 @@ div::-webkit-scrollbar-thumb:hover {
     top: 20px;
     left: 20px;
     align-items: center;
-    
 }
-
 .aboutus div {
     position: relative;
     left: 20px;
@@ -634,7 +573,6 @@ div::-webkit-scrollbar-thumb:hover {
     display: inline-block;
     margin-top: 13px;
 }
-
 .aboutus a {
     text-decoration: none;
     position: absolute;
@@ -646,7 +584,6 @@ div::-webkit-scrollbar-thumb:hover {
     line-height: 38px;
     color: #505693;
 }
-
 .aboutus i {
     position: absolute;
     font-size: 20px;

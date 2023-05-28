@@ -16,7 +16,7 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </head>
 <body>
-    <? include 'header.php';?>
+    <?php include 'header.php';?>
     <div class="left">
         <div class="Hey">Hey, Happy to see you</div>
        <div class="Ready-to"> Ready to <span class="PackGo" >Pack&Go</span>?</div>

@@ -1,12 +1,6 @@
 <?php
 session_start();
-
-if (file_exists('dbconnect.php')) {
-    require 'dbconnect.php';
-} else {
-    echo "File not found";
-    die();
-}
+require_once 'dbconnect.php';
 
 if (isset($_POST["heredone"])) {
     $name = $_POST["name"];
@@ -21,7 +15,7 @@ if (isset($_POST["heredone"])) {
         $profile_tmp = $_FILES["profile"]["tmp_name"];
 
         // Move uploaded file to a permanent location
-        move_uploaded_file($profile_tmp, "profile_images/" . $profile);
+        move_uploaded_file($profile_tmp, "../images/Upload/" . $profile);
     } else {
         $profile = ""; // Default profile image if no file was uploaded
     }
@@ -31,16 +25,16 @@ if (isset($_POST["heredone"])) {
     $errors = array();
 
     if (empty($name) || empty($email) || empty($password) || empty($wilaya) || empty($phonenum)) {
-        array_push($errors, "All fields are required");
+        $errors[] = "All fields are required";
     }
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        array_push($errors, "Email is not valid");
+        $errors[] = "Email is not valid";
     }
     if (strlen($password) < 8) {
-        array_push($errors, "Password must be at least 8 characters long");
+        $errors[] = "Password must be at least 8 characters long";
     }
     if (strlen($phonenum) < 10) {
-        array_push($errors, "Enter a correct phone number");
+        $errors[] = "Enter a correct phone number";
     }
 
     $sql = "SELECT * FROM agencies WHERE email = ?";
@@ -51,27 +45,33 @@ if (isset($_POST["heredone"])) {
         $result = mysqli_stmt_get_result($stmt);
         $rowCount = mysqli_num_rows($result);
         if ($rowCount > 0) {
-            array_push($errors, "Email already exists!");
+            $errors[] = "Email already exists!";
         }
     } else {
-        die("Something went wrong");
+        $errors[] = "Something went wrong";
     }
 
     if (count($errors) > 0) {
         $_SESSION["error"] = implode("<br>", $errors);
-        header("Location: Agency_signup.php");
+        header("Location: ../Pages/Signup_agency.php");
         exit();
     } else {
-        $sql = "INSERT INTO agencies (name, email, password, wilaya, phonenum, profile) VALUES (?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO agencies (name, email, password, phone, wilaya, profile_picture) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_stmt_init($conn);
         if (mysqli_stmt_prepare($stmt, $sql)) {
-            mysqli_stmt_bind_param($stmt, "ssssss", $name, $email, $passwordHash, $wilaya, $phonenum, $profile);
+            mysqli_stmt_bind_param($stmt, "ssssss", $name, $email, $passwordHash, $phonenum, $wilaya, $profile);
             mysqli_stmt_execute($stmt);
-            header("Location: landing_page.php");
+            header("Location: ../landing_page.php");
             exit();
         } else {
             die("Something went wrong");
         }
     }
 }
+
+            $_SESSION["error"] = $error;
+
+            // Redirect back to the login page with the error message
+            header("Location: ../pages/Signup_agency.php");
+            exit();
 ?>

@@ -29,8 +29,12 @@
                     $error = "Email does not exist!";
                 }
                 
-            }
-// Store the error message in a session variable
-                $_SESSION["error"] = $error;
-                
+            
+            // Store the error message in a session variable
+            $_SESSION["error"] = $error;
+
+            // Redirect back to the login page with the error message
+            header("Location: ../pages/Login.php");
+            exit();
+        }
         ?>

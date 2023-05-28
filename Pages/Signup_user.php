@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../css/user_signup.css">
 </head>
 <body>
+    <?php include "header.php";?>
     
     <div class="label">
        <h1>Sign up</h1>
@@ -33,9 +34,12 @@
             <input id="signup" type="submit" value="Register" name="heredone">
         </div>
     </form>
-    <div class="signAgen">
-        <a href="Signup_agency.php" class="link">Sign up as an Agency ?</a>
     </div>
+    </div>
+                <!-- Error message div -->
+                    <?php if (!empty($error)) : ?>
+                    <div class="errors""><?php echo $error; ?></div>
+                <?php endif; ?>
     
 </body>
 </html>

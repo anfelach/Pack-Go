@@ -34,6 +34,7 @@ unset($_SESSION["error"]);
 </head>
 
 <body>
+    <?php include "header.php" ?>
     <div class="left">
         <div class="Hey">Hey, Happy to see you</div>
        <div class="Ready-to"> Ready to <span class="PackGo" >Pack&Go</span>?</div>

@@ -163,35 +163,36 @@ label {
 
 .prof {
     position: absolute;
-    top: 155px;
-    left: 565px;
+    top: 141px;
+    left: 558px;
     font-size: 15px;
     color: #5f5c5c;
 }
 
 #signup {
     position: absolute;
-   top: 400px;
-   left: 770px; 
-   background-color: #81B29A;
-   color: #5f5c5c;
-   padding: 12px 20px;
-   border: none;
-   border-radius: 15px;
-   cursor: pointer;
-   font-style: normal;
-   font-weight: 700;
-   font-size: 15px;
-   line-height: 100%;
+    top: 590px;
+    left: 703px;
+    background-color: #81B29A;
+    color: #5f5c5c;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 100%;
 }
 
 #signup:hover {
-   background-color: #D86F53;
-   box-shadow: 1px 1px 4px rgba(231, 83, 83, 0.4);
-   transform: translateY(-3px);
-   border: 2px solid #D86F53;
-   color: #F4F1DE;
+    background-color: #D86F53;
+    box-shadow: 1px 1px 4px rgba(231, 83, 83, 0.4);
+    transform: translateY(-3px);
+    border: 2px solid #D86F53;
+    color: #F4F1DE;
 }
+
 .signclient {
     position: absolute;
     top: 630px;
@@ -202,11 +203,18 @@ label {
 
 .link {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 20px;
+    left: 80px;
     font-style: normal;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 17px;
     line-height: 100%;
     color: #5f5c5c;
+}
+
+.errors {
+    position: absolute;
+    top: 590px;
+    left: 570px;
+    color: green;
 }
