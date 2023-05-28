@@ -5,8 +5,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
-    background: #F4F1DE;
+.body {
+    background: url(https://i.pinimg.com/originals/65/82/29/65822977be7385302f263ef9be529588.jpg) no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 }
 
 @media all and(max-width: 1024px) {
@@ -35,7 +38,7 @@ header {
     user-select: none;
 }
 
-.linearback {
+.bodyframe {
     position: absolute;
     width: 100%;
     height: 140%;
@@ -44,21 +47,23 @@ header {
     background: linear-gradient(180deg, #81B29A 0%, rgba(161, 194, 178, 0.684375) 11.87%, #F4F1DE 22.63%);
 }
 
-.linearback p {
+.bodyframe p {
     position: absolute;
     left: 118px;
     top: 45px;
     font-size: 2em;
     color: #fff;
     user-select: none;
+    font-size: 50px;
+    font-weight: bold;
 }
 
 .form {
     position: absolute;
     width: 100%;
     height: 100%;
-    left: 20pxpx;
-    top: 400px;
+    left: 20px;
+    top: 250px;
 }
 
 label {
@@ -69,28 +74,28 @@ label {
     font-family: 'Poppins', sans-serif;
 }
 
-.namel {
+.Titlel {
     position: absolute;
     top: 0px;
     left: 300px;
     color: #81B29A;
 }
 
-.destinationl {
+.Destinationl {
     position: absolute;
     top: 100px;
     left: 300px;
     color: #81B29A;
 }
 
-.descriptionl {
+.Descriptionl {
     position: absolute;
     top: 200px;
     left: 300px;
     color: #81B29A;
 }
 
-.pricel {
+.Pricel {
     position: absolute;
     top: 450px;
     left: 300px;
@@ -104,25 +109,46 @@ label {
     color: #81B29A;
 }
 
-.name {
+.DepartureDatel {
+    position: absolute;
+    top: 650px;
+    left: 300px;
+    color: #81B29A;
+}
+
+.DeparturePlacel {
+    position: absolute;
+    top: 750px;
+    left: 300px;
+    color: #81B29A;
+}
+
+.Durationl {
+    position: absolute;
+    top: 850px;
+    left: 300px;
+    color: #81B29A;
+}
+
+.Title {
     position: absolute;
     top: 0px;
     left: 500px;
 }
 
-.destination {
+.Destination {
     position: absolute;
     top: 100px;
     left: 500px;
 }
 
-.description {
+.Description {
     position: absolute;
     top: 200px;
     left: 500px;
 }
 
-.price {
+.Price {
     position: absolute;
     top: 450px;
     left: 500px;
@@ -134,11 +160,32 @@ label {
     left: 500px;
 }
 
-.name,
-.destination,
-.description,
+.Departure_Date {
+    position: absolute;
+    top: 650px;
+    left: 500px;
+}
+
+.Departure_Place {
+    position: absolute;
+    top: 750px;
+    left: 500px;
+}
+
+.Duration {
+    position: absolute;
+    top: 850px;
+    left: 500px;
+}
+
+.Title,
+.Destination,
+.Description,
 .AvailPlac,
-.price {
+.Price,
+.Departure_Date,
+.Departure_Place,
+.Duration {
     border: 2px solid #81B29A;
     border-radius: 5px;
     padding: 10px;
@@ -150,7 +197,7 @@ label {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.description {
+.Description {
     height: 200px;
 }
 
@@ -169,7 +216,7 @@ input:focus {
 
 button[type="submit"] {
     position: absolute;
-    top: 700px;
+    top: 950px;
     left: 800px;
     background-color: #81B29A;
     color: #5f5c5c;
