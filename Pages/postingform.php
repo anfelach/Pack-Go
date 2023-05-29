@@ -16,24 +16,39 @@
     <?php include "header.php" ?>
     <div class="bodyframe">
         <p>Add Your trip To Pack&Go:</p>
-    <div class="form">
-    <form method="" action="" >
-        <label for="Title" class="Titlel">Title:</label>
-        <input type="text" class="Title" name="title" placeholder="Title" required>
-        <label for="Destination" class="Destinationl">Destination:</label>
-        <input type="text" class="Destination" name="name" placeholder="Destination" required>
-        <label for="Description" class="Descriptionl">Description:</label>
-        <textarea class="Description" name="description" placeholder="Description" required></textarea>
-        <label for="Price" class="Pricel">Price:</label>
-        <input type="text" class="Price" name="price" placeholder="price" required>
-        <label for="AvailPlac" class="AvailPlacl">Available Places:</label>
-        <input type="number" class="AvailPlac" name="AvailPlac" placeholder="Available Places" required>
-        <label for="Departure_Date" class="DepartureDatel">Departure Date: </label>
-        <input type="date" class="Departure_Date" name="Departure_date" required>
-        <label for="Departure_Place" class="DeparturePlacel">Departure Place: </label>
-        <input type="text" class="Departure_Place" name="Departure_place" placeholder="Departure Place" required>
-        <label for="Duration" class="Durationl">Duration: </label>
-        <input type= "number" class="Duration" name="Duration" placeholder="Duration" required>
+<div class="form">
+<form method="post" action="../includes/postform.inc.php" >
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required><br>
+
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" required><br>
+
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination" name="destination" required><br>
+
+    <label for="departure_date">Departure Date:</label>
+    <input type="date" id="departure_date" name="departure_date" required><br>
+
+    <label for="departure_place">Departure Place:</label>
+    <input type="text" id="departure_place" name="departure_place" required><br>
+
+    <label for="duration">Duration:</label>
+    <input type="number" id="duration" name="duration" required><br>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" required><br>
+
+    <label for="available_places">Available Places:</label>
+    <input type="number" id="available_places" name="available_places" required><br>
+
+    <label for="agency_id">Agency ID:</label>
+    <input type="number" id="agency_id" name="agency_id" required><br>
+    <label for="image_url">Image_url:</label>
+    <input type="text" id="image_url" name="image_url" required><br>
+
+    <input type="submit" value="Submit">
+  </form>
         <button type="submit">Post</button>
     </form>
     </div>

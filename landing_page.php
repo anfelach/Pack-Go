@@ -123,7 +123,7 @@ require_once 'php/dbconnect.php';
         <div class="Constantine"><a href="">Constantine</a></div>
         <div class="Annaba"><a href="">Annaba</a></div>
     </div>
-    <a id="Dest" href="trips.php">Top Destination</a>
+    <a id="Dest" href="Pages/trips.php">Top Destination</a>
     <div class="destination">
         <div></div>
         <div></div>
@@ -134,7 +134,7 @@ require_once 'php/dbconnect.php';
         <div></div>
         <div></div>
     </div>
-    <a class="Agencies" id="Agen" href="agencies.php">Top Agencies</a>
+    <a class="Agencies" id="Agen" href="Pages/agencies.php">Top Agencies</a>
     <div class="agencies">
         <div></div>
         <div></div>
