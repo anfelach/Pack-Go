@@ -8,17 +8,11 @@ if (isset($_POST["heredone"])) {
     $password = $_POST["password"];
     $wilaya = $_POST["wilaya"];
     $phonenum = $_POST["phonenum"]; 
+    $profile = $_FILES["profile"]["name"];
+    $profiletemp = $_FILES["profile"]["tmp_name"];
+    $folder = "../img/Upload/" . $profile;
 
-    // Check if a file was uploaded
-    if (isset($_FILES["profile"]) && $_FILES["profile"]["error"] === UPLOAD_ERR_OK) {
-        $profile = $_FILES["profile"]["name"];
-        $profile_tmp = $_FILES["profile"]["tmp_name"];
-
-        // Move uploaded file to a permanent location
-        move_uploaded_file($profile_tmp, "../images/Upload/" . $profile);
-    } else {
-        $profile = ""; // Default profile image if no file was uploaded
-    }
+    
 
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
@@ -53,15 +47,24 @@ if (isset($_POST["heredone"])) {
 
     if (count($errors) > 0) {
         $_SESSION["error"] = implode("<br>", $errors);
-        header("Location: ../Pages/Signup_agency.php");
+        header("Location: ../Pages/SignUpAgency.php");
         exit();
     } else {
+        // Process the file upload
+        if (move_uploaded_file($profiletemp, $folder)) {
+            // File uploaded successfully
+            echo "Profile picture uploaded successfully.";
+        } else {
+            // Error uploading file
+            echo "Error uploading profile picture.";
+        }
+
         $sql = "INSERT INTO agencies (name, email, password, phone, wilaya, profile_picture) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_stmt_init($conn);
         if (mysqli_stmt_prepare($stmt, $sql)) {
             mysqli_stmt_bind_param($stmt, "ssssss", $name, $email, $passwordHash, $phonenum, $wilaya, $profile);
             mysqli_stmt_execute($stmt);
-            header("Location: ../landing_page.php");
+            header("Location: ../index.php");
             exit();
         } else {
             die("Something went wrong");
@@ -69,9 +72,10 @@ if (isset($_POST["heredone"])) {
     }
 }
 
-            $_SESSION["error"] = $error;
+$_SESSION["error"] = $error;
 
-            // Redirect back to the login page with the error message
-            header("Location: ../pages/Signup_agency.php");
-            exit();
+// Redirect back to the signup page with the error message
+header("Location: ../pages/SignUpAgency.php");
+exit();
+
 ?>

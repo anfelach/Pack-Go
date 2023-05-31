@@ -3,7 +3,7 @@
             require_once 'dbconnect.php';
 
             if (isset($_SESSION["user"])) {
-                header("Location: ../landing_page.php");
+                header("Location: ../index.php");
                 exit();
                 
             }
@@ -19,8 +19,12 @@
 
                 if ($user) {
                     if (password_verify($pass, $user["password"])) {
-                        $_SESSION["user"] = "true";
-                        header("Location: ../landing_page.php");
+                        $_SESSION["user"] = "agency";
+                        $_SESSION["username"] = $user["name"]; // Store the client's username in the session
+                        $_SESSION['email'] = $user['email'];
+                        $_SESSION['password'] = $user['password'];  
+
+                        header("Location: ../index.php");
                         exit();
                     } else {
                         $error = "Password does not match!";
@@ -34,7 +38,7 @@
             $_SESSION["error"] = $error;
 
             // Redirect back to the login page with the error message
-            header("Location: ../pages/login_agency.php");
+            header("Location: ../Pages/LoginAgen.php");
             exit();
         }
         ?>
