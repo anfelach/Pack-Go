@@ -55,7 +55,7 @@ require_once 'php/dbconnect.php';
                             <a href="Pages/about.php" class="nav-item nav-link">About</a>
                             <a href="Pages/service.php" class="nav-item nav-link">Services</a>
                             <a href="Pages/Agencies.php" class="nav-item nav-link">Agencies</a>
-                            <a href="Pages/Trips.php" class="nav-item nav-link">Trips</a>
+                            <a href="Pages/trips.php" class="nav-item nav-link">Trips</a>
                             <a href="Pages/contact.php" class="nav-item nav-link">Contact</a>
                         </div>
                         <?php

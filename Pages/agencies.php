@@ -60,50 +60,58 @@ ini_set('display_startup_errors', 0);
     
 
 
-    <!-- Destination Start -->
-    <div class="container-xxl py-5 destination">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Agencies</h6>
-                <h1 class="mb-5">Subscribed Agencies</h1>
-            </div>
-            <div class="row g-3">
-                <div class="col-lg-7 col-md-6">
-                    <div class="row g-3">
-                        <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/destination-1.jpg" alt="">
-                                <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Alger</div>
-                                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Numidia</div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/destination-2.jpg" alt="">
-                                <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Oran</div>
-                                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Furat</div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/destination-3.jpg" alt="">
-                                <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Constantine</div>
-                                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Bahdja</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/destination-4.jpg" alt="" style="object-fit: cover;">
-                        <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Bejaia</div>
-                        <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Akfado</div>
-                    </a>
-                </div>
-            </div>
+    <!-- Package Start -->
+    <div class="container-xxl py-5">
+        <div class="container" id='trips'>
+              <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                  <h6 class="section-title bg-white text-center text-primary px-3">Trips</h6>
+                  <h1 class="mb-5">Organized Trips</h1>
+              </div>
+              <div class="row g-4 justify-content-center">
+                  
+                  
+              <?php
+             $sql = "SELECT * FROM agencies";
+              $result = $conn->query($sql);
+              if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                ?>
+                  <!-- start trip -->
+                  <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                      <div class="package-item">
+                          <div class="overflow-hidden">
+                              <img class="img-fluid" src="img/package-3.jpg" alt="">
+                          </div>
+                          <div class="d-flex border-bottom">
+                              <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo $row['wilaya']?></small>
+                              <small class="flex-fill text-center border-end py-2"></i> <?php echo $row['email']?></small>
+                          </div>
+                          <div class="text-center p-4">
+                              <h3 class="mb-0"><?php echo $row['name']?> </h3>
+                              <div class="mb-3">
+                                  <small class="fa fa-star text-primary"></small>
+                                  <small class="fa fa-star text-primary"></small>
+                                  <small class="fa fa-star text-primary"></small>
+                                  <small class="fa fa-star text-primary"></small>
+                                  <small class="fa fa-star text-primary"></small>
+                              </div>
+                              <p><?php echo $row['description']?></p>
+                              <div class="d-flex justify-content-center mb-2">
+                                  <a href="#" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- end trip -->
+                  <?php };};
+                  ?>
+
+              </div>
         </div>
     </div>
-    <!-- Destination Start -->
+    <!-- Package End -->
+
+
         
 
     <? include "footer.php"?>
