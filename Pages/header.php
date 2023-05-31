@@ -68,7 +68,7 @@ require_once '../php/dbconnect.php';
                             <div class="nav-item dropdown">
                                 <a href="" class="btn btn-primary rounded-pill py-2 px-4" data-bs-toggle="dropdown">' . $_SESSION["username"] . '</a>
                                 <div class="dropdown-menu m-0">
-                                    <a href="Pages/UserProfil.php" class="dropdown-item">My Profile</a>
+                                    <a href="../Pages/UserProfil.php" class="dropdown-item">My Profile</a>
                                     <a href="#" class="dropdown-item">My favoutites</a>
                                     <a href="php/Logout.php" class="dropdown-item">Log out</a>
             
@@ -80,7 +80,7 @@ require_once '../php/dbconnect.php';
                             <div class="nav-item dropdown">
                                 <a href="" class="btn btn-primary rounded-pill py-2 px-4" data-bs-toggle="dropdown">' . $_SESSION["username"] . '</a>
                                 <div class="dropdown-menu m-0">
-                                    <a href="Pages/AgencyProfil.php" class="dropdown-item">My Profile</a>
+                                    <a href="../Pages/AgencyProfil.php" class="dropdown-item">My Profile</a>
                                     <a href="#" class="dropdown-item">My trips</a>
                                     <a href="../php/Logout.php" class="dropdown-item">Log out</a>
             

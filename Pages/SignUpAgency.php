@@ -1,4 +1,7 @@
-
+<?php 
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -30,7 +33,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
+    <!--Stylesheet -->
     <link href="../css/Agency_signup.css" rel="stylesheet">
 </head>
 
