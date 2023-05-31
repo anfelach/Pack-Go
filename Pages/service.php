@@ -1,3 +1,8 @@
+<?php 
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,7 +79,7 @@
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
-                                <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
+                                <i class="fa fa-3x fa-thin fa-suitcase-rolling text-primary mb-4"></i>
                                 <h5>Finding Trips</h5>
                                 <p>with Pack&Go, you can find various trips to many destinations </p>
                             </div>
@@ -83,7 +88,7 @@
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
-                                <i class="fa fa-3x fa-user text-primary mb-4"></i>
+                                <i class="fa fa-3x fa-map-marker-alt text-primary mb-4"></i>
                                 <h5>Finding Agencies</h5>
                                 <p>Pack&Go offers for you group of agencies that you may need for your traveling</p>
                             </div>
@@ -92,7 +97,7 @@
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
-                                <i class="fa fa-3x fa-cog text-primary mb-4"></i>
+                                <i class="fa fa-3x fa-user text-primary mb-4"></i>
                                 <h5>Local Guides(Soon)</h5>
                                 <p> In Pack&Go, You can find the guide that you need in discovering the deep Algeria</p>
                             </div>
