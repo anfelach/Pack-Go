@@ -82,6 +82,7 @@ ini_set('display_startup_errors', 0);
                 <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
                     <h1 class="display-3 text-white mb-3 animated slideInDown"><?php echo $agency['name']; ?> Profile</h1>
                     <p class="fs-4 text-white mb-4 animated slideInDown"><?php echo $agency['name']; ?> Agency, Welcome to Pack&Go Platform</p>
+                    <a class="fs-4 text-white mb-4 animated slideInDown" href="./PostForm.php">Add a trip</a>
                 </div>
             </div>
         </div>

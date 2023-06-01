@@ -10,8 +10,12 @@ $departure_place = $_POST['departure_place'];
 $duration = $_POST['duration'];
 $price = $_POST['price'];
 $available_places = $_POST['available_places'];
-$agency_id = $_POST['agency_id'];
+$email = $_POST['email'];
 $image_url = $_POST['image_url'];
+
+$sql = 'SELECT agency_id from agencies WHERE email = "$email" ';
+$result = mysqli_query($db, $sql);
+$agency_id = $result;
 
 
 if (!empty($title) && !empty($description) && !empty($destination) && !empty($departure_place) &&
