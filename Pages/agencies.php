@@ -84,7 +84,7 @@ ini_set('display_startup_errors', 0);
                           </div>
                           <div class="d-flex border-bottom">
                               <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo $row['wilaya']?></small>
-                              <small class="flex-fill text-center border-end py-2"></i> <?php echo $row['email']?></small>
+                              <small class="flex-fill text-center border-end py-2"><i class="fa fa-phone text-primary me-2"></i>    <?php echo $row['phone']?></small>
                           </div>
                           <div class="text-center p-4">
                               <h3 class="mb-0"><?php echo $row['name']?> </h3>

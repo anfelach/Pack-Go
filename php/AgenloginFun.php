@@ -10,7 +10,7 @@
             if (isset($_POST["login"])) {
                 $email = $_POST["email"];
                 $pass= $_POST["psw"];
-
+                // $_SESSION['email'] = $email; 
                 
                 $sql = "SELECT * FROM agencies WHERE email = '$email'";
                 $result = mysqli_query($conn, $sql);

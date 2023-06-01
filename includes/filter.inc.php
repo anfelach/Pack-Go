@@ -10,14 +10,16 @@ include("../php/dbconnect.php");
               </div>
               <div class="row g-4 justify-content-center">
     <?php
- 
+    if(isset($_POST['request1'])){
     $price = $_POST['request1'];
+    }
     $destination = $_POST['request2'];
    
     $sql = "SELECT * FROM trips WHERE 1";
     if(isset($_POST['request1'])){
     $sql .= " AND price <= '$price'";
     }
+
     if(isset($_POST['request2']) && $destination !== "ALL"){
         $sql .= " AND destination = '$destination' ";
     }

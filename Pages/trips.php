@@ -86,7 +86,7 @@ ini_set('display_startup_errors', 0);
                                
                                 <div class="col-md-6">
                                     
-                                <select class="form-floating date"  data-target-input="nearest" id='wilaya' >
+                                <select  id='wilaya' style="background: transparent; height:58px; border-radius: 0px;" >
                                   <option value="ALL" selected>ALL</option>
                                   <?php 
                                   $sql = 'SELECT wilaya_name FROM wilaya';
@@ -95,7 +95,7 @@ ini_set('display_startup_errors', 0);
                                   while ($row = $result->fetch_assoc()) {
                                     ?>
                                   
-                                  <option value="<?php echo $row['wilaya'] ;?>"><?php echo $row['wilaya'];?></option>
+                                  <option value="<?php echo $row['wilaya_name'] ;?>"><?php echo $row['wilaya_name'];?></option>
                                   <?php };};?>
                                 </select>
                                 </div>
