@@ -71,7 +71,7 @@ require_once 'php/dbconnect.php';
                             <div class="nav-item dropdown">
                                 <a href="" class="btn btn-primary rounded-pill py-2 px-4" data-bs-toggle="dropdown">' . $_SESSION["username"] . '</a>
                                 <div class="dropdown-menu m-0">
-                                    <a href="Pages/UserProfil.php" class="dropdown-item">My Profile</a>
+                                    <a href="Pages/UserProfile.php" class="dropdown-item">My Profile</a>
                                     <a href="#" class="dropdown-item">My favoutites</a>
                                     <a href="php/Logout.php" class="dropdown-item">Log out</a>
             
@@ -418,7 +418,7 @@ require_once 'php/dbconnect.php';
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                             <div class="text-center p-4">
-                                <h5 class="mb-0">ImadEddine CHARCHAR</h5>
+                                <h5 class="mb-0">CHARCHAR Imad-Eddine</h5>
                                 <small>Full Stack Developer</small>
                             </div>
                         </div>

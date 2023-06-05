@@ -66,62 +66,63 @@ ini_set('display_startup_errors', 0);
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" name="title" id="Title" placeholder="Trip Title">
+                                        <input type="text" class="form-control bg-transparent" name="title" id="Title" placeholder="Trip Title" required>
                                         <label for="Title">Trip Title</label>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-floating date" >
-                                        <input type="text" class="form-control bg-transparent datetimepicker-input" name="destination"  id="Destination" placeholder="Trip Destination" />
+                                        <input type="text" class="form-control bg-transparent datetimepicker-input" name="destination"  id="Destination" placeholder="Trip Destination" required />
                                         <label for="Destination">Trip Destination</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" >
-                                        <textarea class="form-control bg-transparent datetimepicker-input" name="description" id="Description" placeholder="Trip Description" ></textarea>
+                                        <textarea class="form-control bg-transparent datetimepicker-input" name="description" id="Description" placeholder="Trip Description" required ></textarea>
                                         <label for="Description">Trip Description</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" >
-                                        <input type="number" class="form-control bg-transparent datetimepicker-input" name="price" id="Price" placeholder="Trip Price" />
+                                        <input type="number" class="form-control bg-transparent datetimepicker-input" name="price" min='0' id="Price" placeholder="Trip Price" required />
                                         <label for="Price">Trip Price</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" >
-                                        <input type="number" class="form-control bg-transparent datetimepicker-input" name="available_places" id="AvailPlac" placeholder="Available Places" />
+                                        <input type="number" class="form-control bg-transparent datetimepicker-input" name="available_places" min='1' id="AvailPlac" placeholder="Available Places" required />
                                         <label for="AvailPlac">Available Places</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" >
-                                        <input type="date" class="form-control bg-transparent datetimepicker-input" name="departure_date" id="DepDate" placeholder="Departure Date" />
+                                        <input type="date" class="form-control bg-transparent datetimepicker-input" name="departure_date" id="DepDate" placeholder="Departure Date" required />
                                         <label for="DepDate">Departure Date</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" >
-                                        <input class="form-control bg-transparent datetimepicker-input" name="departure_place"  id="Depplace" placeholder="Departure Place" />
+                                        <input class="form-control bg-transparent datetimepicker-input" name="departure_place"  id="Depplace" placeholder="Departure Place" required />
                                         <label for="Depplace">Departure Place</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" >
-                                        <input type="number" class="form-control bg-transparent datetimepicker-input" name="duration" id="Duration" placeholder="Trip Duration" />
+                                        <input type="number" class="form-control bg-transparent datetimepicker-input" name="duration" min='1' id="Duration" placeholder="Trip Duration" required />
                                         <label for="Trip Duration"> Trip Duration</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date">
-                                        <input type="file" class="form-control bg-transparent datetimepicker-input" name="trip_url" id="TripPic" placeholder="Trip Picture" />
+                                        <input type="file" class="form-control bg-transparent datetimepicker-input" name="trip_url" id="TripPic" placeholder="Trip Picture" required />
                                         <label for="TripPic"></label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-outline-light w-100 py-3" type="submit" >Post</button>
                                 </div>
+                                <p><?php  echo $_SESSION['error']; ?></p>
                             </div>
                         </form>
                     </div>

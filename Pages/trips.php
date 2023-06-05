@@ -79,7 +79,7 @@ ini_set('display_startup_errors', 0);
                                 
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="Divprice" data-target-input="nearest">
-                                        <input type="number" class="form-control bg-transparent datetimepicker-input" id="price" placeholder="Max price"  />
+                                        <input type="number" class="form-control bg-transparent datetimepicker-input" id="price" min='0' step='500' placeholder="Max price"  />
                                         <label for="price">Max Price</label>
                                     </div>
                                 </div>
