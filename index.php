@@ -83,8 +83,7 @@ require_once 'php/dbconnect.php';
                             <div class="nav-item dropdown">
                                 <a href="" class="btn btn-primary rounded-pill py-2 px-4" data-bs-toggle="dropdown">' . $_SESSION["username"] . '</a>
                                 <div class="dropdown-menu m-0">
-                                    <a href="Pages/AgencyProfil.php" class="dropdown-item">My Profile</a>
-                                    <a href="#" class="dropdown-item">My trips</a>
+                                    <a href="Pages/AgencyProfil2.php" class="dropdown-item">My Profile</a>
                                     <a href="php/Logout.php" class="dropdown-item">Log out</a>
             
                                 </div>
@@ -184,7 +183,7 @@ require_once 'php/dbconnect.php';
         <!-- Service End -->
 
 
-        <!-- Destination Start -->
+        <!-- Agencies Start -->
         <div class="container-xxl py-5 destination">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -197,22 +196,22 @@ require_once 'php/dbconnect.php';
                             <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
                                 <a class="position-relative d-block overflow-hidden" href="">
                                     <img class="img-fluid" src="img/annaba.jpg" alt="">
-                                    <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Annaba</div>
-                                    <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Peace Agency</div>
+                                    <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Peace Agency</div>
+                                    <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Annaba</div>
                                 </a>
                             </div>
                             <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
                                 <a class="position-relative d-block overflow-hidden" href="">
                                     <img class="img-fluid" src="img/Bejaia.jpg" alt="">
-                                    <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Bejaia</div>
-                                    <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Akfado Agency</div>
+                                    <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Akfado Agency</div>
+                                    <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Bejaia</div>
                                 </a>
                             </div>
                             <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
                                 <a class="position-relative d-block overflow-hidden" href="">
                                     <img class="img-fluid" src="img//CONSTANTINE Gallery.png" alt="">
-                                    <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Constantine</div>
-                                    <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Numidia agency</div>
+                                    <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Numidia agency</div>
+                                    <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Constantine</div>
                                 </a>
                             </div>
                         </div>
@@ -220,17 +219,17 @@ require_once 'php/dbconnect.php';
                     <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
                         <a class="position-relative d-block h-100 overflow-hidden" href="">
                             <img class="img-fluid position-absolute w-100 h-100" src="img/Tlemcen.jpg" alt="" style="object-fit: cover;">
-                            <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Tlemcen</div>
-                            <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">AlFurat Agency</div>
+                            <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">AlFurat Agency</div>
+                            <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Tlemcen</div>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Destination Start -->
+        <!-- Agencies Start -->
 
 
-        <!-- Package Start -->
+        <!-- Trips Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -322,7 +321,7 @@ require_once 'php/dbconnect.php';
                 </div>
             </div>
         </div>
-        <!-- Package End -->
+        <!-- Trips End -->
 
 
         <!-- Booking Start -->
@@ -333,8 +332,8 @@ require_once 'php/dbconnect.php';
                         <div class="col-md-6 text-white">
                             <h6 class="text-white text-uppercase">Booking</h6>
                             <h1 class="text-white mb-4">Online Booking</h1>
-                            <p class="mb-4">Description1</p>
-                            <p class="mb-4">Description 2</p>
+                            <p class="mb-4">Fill Out the Required informations and Book your Dream Trip</p>
+                            <p class="mb-4">(Filter the trips according to your need)</p>
                         </div>
                         <div class="col-md-6">
                             <h1 class="text-white mb-4">Book A Trip</h1>
@@ -395,7 +394,7 @@ require_once 'php/dbconnect.php';
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item">
                             <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/team-1.jpg" alt="">
+                                <img class="img-fluid" src="img/" alt="">
                             </div>
                             <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -403,15 +402,15 @@ require_once 'php/dbconnect.php';
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                             <div class="text-center p-4">
-                                <h5 class="mb-0">Full Name</h5>
-                                <small>Designation</small>
+                                <h5 class="mb-0">Chaker YOUSFI</h5>
+                                <small>Full Stack Developer</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-item">
                             <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/team-2.jpg" alt="">
+                                <img class="img-fluid" src="img/" alt="">
                             </div>
                             <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -419,15 +418,15 @@ require_once 'php/dbconnect.php';
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                             <div class="text-center p-4">
-                                <h5 class="mb-0">Full Name</h5>
-                                <small>Designation</small>
+                                <h5 class="mb-0">ImadEddine CHARCHAR</h5>
+                                <small>Full Stack Developer</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item">
                             <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/team-3.jpg" alt="">
+                                <img class="img-fluid" src="img/" alt="">
                             </div>
                             <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -435,15 +434,15 @@ require_once 'php/dbconnect.php';
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                             <div class="text-center p-4">
-                                <h5 class="mb-0">Full Name</h5>
-                                <small>Designation</small>
+                                <h5 class="mb-0">Anfal ACHOURI</h5>
+                                <small>Full stack Developer</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                         <div class="team-item">
                             <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <img class="img-fluid" src="img/" alt="">
                             </div>
                             <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -451,8 +450,8 @@ require_once 'php/dbconnect.php';
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                             <div class="text-center p-4">
-                                <h5 class="mb-0">Full Name</h5>
-                                <small>Designation</small>
+                                <h5 class="mb-0">SeifAllah SAIDOUN</h5>
+                                <small>Full Stack Developer</small>
                             </div>
                         </div>
                     </div>
@@ -469,14 +468,14 @@ require_once 'php/dbconnect.php';
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                         <div class="position-relative h-100">
-                            <img class="img-fluid position-absolute w-100 h-100" src="img/about.jpg" alt="" style="object-fit: cover;">
+                            <img class="img-fluid position-absolute w-100 h-100" src="img/Algeria.jpg" alt="" style="object-fit: cover;">
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                         <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
                         <h1 class="mb-4">Welcome to <span class="text-primary">Pack&Go</span></h1>
-                        <p class="mb-4">Description</p>
-                        <p class="mb-4">Description</p>
+                        <p class="mb-4">The First Platform in Algeria That provides the possibillity to find your trip and book for it and gives you the chance to search about various number of agencies around all algerian territory.</p>
+                        <p class="mb-4"></p>
                         <div class="row gy-2 gx-4 mb-4">
                             <div class="col-sm-6">
                                 <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Various Trips</p>

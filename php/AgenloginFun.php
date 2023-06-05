@@ -10,7 +10,7 @@
             if (isset($_POST["login"])) {
                 $email = $_POST["email"];
                 $pass= $_POST["psw"];
-                // $_SESSION['email'] = $email; 
+                $_SESSION['email'] = $email; 
                 
                 $sql = "SELECT * FROM agencies WHERE email = '$email'";
                 $result = mysqli_query($conn, $sql);
@@ -23,7 +23,7 @@
                         $_SESSION["username"] = $user["name"]; // Store the client's username in the session
                         $_SESSION['email'] = $user['email'];
                         $_SESSION['password'] = $user['password'];  
-
+                        $_SESSION['agencyin'] = 'in';
                         header("Location: ../index.php");
                         exit();
                     } else {

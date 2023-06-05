@@ -41,54 +41,44 @@ ini_set('display_startup_errors', 0);
     
     <?php include "header.php"; ?>
         <?php
-            
-
             session_start();
             // Include the necessary files and connect to the database
             require_once '../php/dbconnect.php';
 
-            // Check if the user is logged in as an agency
-            if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'agency') {
-                // Redirect to the login page if not logged in as an agency
-                header("Location: ../Pages/login_agency.php");
-                exit();
-            }
-
+            
             // Retrieve the agency's profile information from the database using the email
-            $agencyEmail = $_SESSION['email'];
-            $sql = "SELECT * FROM agencies WHERE email = ?";
-            $stmt = mysqli_prepare($conn, $sql);
-            mysqli_stmt_bind_param($stmt, "s", $agencyEmail);
-            mysqli_stmt_execute($stmt);
-            $result = mysqli_stmt_get_result($stmt);
-            $agency = mysqli_fetch_assoc($result);
+            $id = substr($_SERVER['QUERY_STRING'],3);
+            $sql = "SELECT * FROM agencies WHERE id = '$id'";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
 
-            // Check if the agency exists
-            if (!$agency) {
-                // Redirect or display an error message if the agency is not found
-                exit();
-            }
 
             // Retrieve the profile picture path from the database
-            $profilePicturePath = $agency['profile_picture'];
+            $profilePicturePath = $row['profile_picture'];
 
             // Generate the URL of the profile picture
             $profilePictureURL = "../img/Upload/" . $profilePicturePath;
             ?>
 
     <div class="container-fluid bg-primary py-5 mb-5 hero-header">
-        <div class="container py-5">
-            <div class="row justify-content-center py-5">
-                <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown"><?php echo $agency['name']; ?> Profile</h1>
-                    <p class="fs-4 text-white mb-4 animated slideInDown"><?php echo $agency['name']; ?> Agency, Welcome to Pack&Go Platform</p>
-                    <a class="fs-4 text-white mb-4 animated slideInDown" href="./PostForm.php">Add a trip</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
+             <div class="container py-5">
+                 <div class="row justify-content-center py-5">
+                     <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                         <h1 class="display-3 text-white mb-3 animated slideInDown"><?php echo $row['name']; ?> Profile</h1>
+                         <?php if ($_SESSION['agencyin'] == 'in' && $row['name'] == $user["name"] )  { ?>
+                        <div class="nav-item dropdown">
+                            <a href="" class="btn btn-primary rounded-pill py-2 px-4" data-bs-toggle="dropdown">Manage my trips</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="./PostForm.php" class="dropdown-item">Add a Trip</a>
+                                <a href="#" class="dropdown-item">Delete a Trip</a>
+                            </div>
+                        </div>
+                    <?php } ?>
+                      </div>
+                 </div>
+             </div>
+    </div> 
+                   
 
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
@@ -98,30 +88,29 @@ ini_set('display_startup_errors', 0);
                         <h1 class="text-white mb-4"><img src="<?php echo $profilePictureURL; ?>" alt="Profile Picture"></h1>
                     </div>
                     <div class="col-md-6">
-                        <h1 class="text-white mb-4"><?php echo $agency['name']; ?> Informations</h1>
+                        <h1 class="text-white mb-4"><?php echo $row['name']; ?> Informations</h1>
                         
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <h2 class="fs-4 text-white mb-4 animated slideInDown"><?php echo $agency['name']; ?></h2>
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-floating date">
-                                    <p class="fs-4 text-white mb-4 animated slideInDown"><?php echo $agency['email']; ?></p>
+                                        <p class="fs-4 text-white mb-4 animated slideInDown">Name: <?php echo $row['name']; ?></p>
                                         
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date">
-                                        <p class="fs-4 text-white mb-4 animated slideInDown"><?php echo $agency['phone']; ?></p>
+                                    <p class="fs-4 text-white mb-4 animated slideInDown">Email: <?php echo $row['email']; ?></p>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date">
-                                        <p class="fs-4 text-white mb-4 animated slideInDown"><?php echo $agency['wilaya']; ?></p>
+                                        <p class="fs-4 text-white mb-4 animated slideInDown">Phone Number: <?php echo $row['phone']; ?></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating date">
+                                        <p class="fs-4 text-white mb-4 animated slideInDown">Wilaya: <?php echo $row['wilaya']; ?></p>
                                     </div>
                                 </div>
                                 
@@ -133,6 +122,71 @@ ini_set('display_startup_errors', 0);
             </div>
         </div>
     </div>
+    <!-- Package Start -->
+    <div class="container-xxl py-5">
+            <div class="container" id='trips'>
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title bg-white text-center text-primary px-3">Trips</h6>
+                    <h1 class="mb-5"><?php echo $row['name']; ?> Trips</h1>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    
+                    
+                    <?php
+                    $sql = "SELECT * FROM trips where agency_id= '$id' ";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $tripId = $row['id'];
+                        // echo $tripId;
+
+
+
+                        ?>
+                        <!-- start trip -->
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="package-item">
+                                <?php
+                                // Retrieve the profile picture path from the database
+                                    $tripPicturePath = $row['trip_url'];
+
+                                    // Generate the URL of the profile picture
+                                    $tripPictureURL = "../img/Upload/" . $tripPicturePath;
+                                    ?>
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="<?php echo $tripPictureURL; ?>" alt="">
+                                </div>
+                                <div class="d-flex border-bottom">
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo $row['destination']?></small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i><?php echo $row['duration'] ?> day(s)</small>
+                                    <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i><?php echo $row['available_places']?> place(s)</small>
+                                </div>
+                                <div class="text-center p-4">
+                                    <h3 class="mb-0"><?php echo $row['price']?> DA</h3>
+                                    <div class="mb-3">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                    <p><?php echo $row['description']?></p>
+                                    <div class="d-flex justify-content-center mb-2">
+
+                                    <a href="trip.php?id=<?php echo $tripId ; ?>" data-value="" id='readmore'  class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                        <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end trip -->
+                        <?php };};
+                        ?>
+
+                </div>
+            </div>
+        </div>
+        <!-- Package End -->
     <?php include"footer.php";?>
 
     <!-- JavaScript Libraries -->
@@ -147,7 +201,7 @@ ini_set('display_startup_errors', 0);
     <script src="../lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Javascript -->
-    <script src="../js/main.js"></script>
+    <!--<script src="../js/main.js"></script>-->
 
     
 

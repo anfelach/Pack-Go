@@ -80,8 +80,7 @@ require_once '../php/dbconnect.php';
                             <div class="nav-item dropdown">
                                 <a href="" class="btn btn-primary rounded-pill py-2 px-4" data-bs-toggle="dropdown">' . $_SESSION["username"] . '</a>
                                 <div class="dropdown-menu m-0">
-                                    <a href="../Pages/AgencyProfil.php" class="dropdown-item">My Profile</a>
-                                    <a href="#" class="dropdown-item">My trips</a>
+                                    <a href="../Pages/AgencyProfil2.php" class="dropdown-item">My Profile</a>
                                     <a href="../php/Logout.php" class="dropdown-item">Log out</a>
             
                                 </div>
@@ -112,15 +111,15 @@ require_once '../php/dbconnect.php';
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="lib/wow/wow.min.js"></script>
-            <script src="lib/easing/easing.min.js"></script>
-            <script src="lib/waypoints/waypoints.min.js"></script>
-            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-            <script src="lib/tempusdominus/js/moment.min.js"></script>
-            <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-            <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+            <script src="../lib/wow/wow.min.js"></script>
+            <script src="../lib/easing/easing.min.js"></script>
+            <script src="../lib/waypoints/waypoints.min.js"></script>
+            <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+            <script src="../lib/tempusdominus/js/moment.min.js"></script>
+            <script src="../lib/tempusdominus/js/moment-timezone.min.js"></script>
+            <script src="../lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
             <!-- Template Javascript -->
-            <script src="js/main.js"></script>
+            <script src="../js/main.js"></script>
     </body>
     </html>

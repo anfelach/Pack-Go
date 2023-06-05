@@ -62,7 +62,7 @@ ini_set('display_startup_errors', 0);
                     </div>
                     <div class="col-md-6">
                         <h1 class="text-white mb-4">Trip Informations</h1>
-                        <form method="POST" action="../includes/postform.inc.php" >
+                        <form method="POST" action="../includes/postform.inc.php" enctype="multipart/form-data" >
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">

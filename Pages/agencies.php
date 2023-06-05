@@ -40,23 +40,23 @@ ini_set('display_startup_errors', 0);
 
         <?php include "header.php";?>
 
-        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
-        <div class="container py-5">
-            <div class="row justify-content-center py-5">
-                <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Agencies</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Agencies</a></li>
-                            
-                        </ol>
-                    </nav>
+            <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">Agencies</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Agencies</a></li>
+                                
+                            </ol>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+        </div>
     
 
 
@@ -64,8 +64,8 @@ ini_set('display_startup_errors', 0);
     <div class="container-xxl py-5">
         <div class="container" id='trips'>
               <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                  <h6 class="section-title bg-white text-center text-primary px-3">Trips</h6>
-                  <h1 class="mb-5">Organized Trips</h1>
+                  <h6 class="section-title bg-white text-center text-primary px-3">Agencies</h6>
+                  <h1 class="mb-5">Subscribed Agencies</h1>
               </div>
               <div class="row g-4 justify-content-center">
                   
@@ -75,12 +75,20 @@ ini_set('display_startup_errors', 0);
               $result = $conn->query($sql);
               if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
+                $AgencyId = $row['id'];
                 ?>
                   <!-- start trip -->
                   <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                       <div class="package-item">
+                            <?php
+                             // Retrieve the profile picture path from the database
+                                $AgencyPicturePath = $row['profile_picture'];
+
+                                // Generate the URL of the profile picture
+                                $AgencyPictureURL = "../img/Upload/" . $AgencyPicturePath;
+                                ?>
                           <div class="overflow-hidden">
-                              <img class="img-fluid" src="img/package-3.jpg" alt="">
+                              <img class="img-fluid" src="<?php echo $AgencyPictureURL; ?>" alt="">
                           </div>
                           <div class="d-flex border-bottom">
                               <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo $row['wilaya']?></small>
@@ -97,8 +105,9 @@ ini_set('display_startup_errors', 0);
                               </div>
                               <p><?php echo $row['description']?></p>
                               <div class="d-flex justify-content-center mb-2">
-                                  <a href="#" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
-                              </div>
+                              <a href="AgencyProfil.php?id=<?php echo $AgencyId ; ?>" data-value="" id='readmore'  class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+
+                                </div>
                           </div>
                       </div>
                   </div>
