@@ -155,11 +155,8 @@ ini_set('display_startup_errors', 0);
                                 <div class="col-12">
                                     <button class="btn btn-outline-light w-100 py-3" type="submit" name="heredone">Sign Up</button>
                                 </div>
+                                <p><?php  echo $_SESSION['error']; ?></p>
                             </div>
-                            <!-- Error message div -->
-                            <?php if (!empty($error)) : ?>
-                            <div class="fs-4 text-white mb-4 animated slideInDown"><?php echo $error; ?></div>
-                            <?php endif; ?>
                         </form>
                     </div>
                 </div>

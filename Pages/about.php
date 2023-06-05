@@ -70,7 +70,7 @@ ini_set('display_startup_errors', 0);
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                         <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
                         <h1 class="mb-4">Welcome to <span class="text-primary">Pack&Go</span></h1>
-                        <p class="mb-4">The Fisrt Platform in Algeria That provides the possibillity to find your trip and book for it, and gives you the chance to search about various number of agencies around all Algerian territory</p>
+                        <p class="mb-4">The Firstt platform in Algeria that provides the possibillity to find your trip and book for it and gives you the chance to search about various number of agencies around all algerian territory.</p>
                         <p class="mb-4"></p>
                         <div class="row gy-2 gx-4 mb-4">
                             <div class="col-sm-6">

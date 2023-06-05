@@ -23,11 +23,16 @@ $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 $agency_id = $row['id'];        
 
+$errors = array();
 
+if (empty($title) || empty($description) || empty($destination) || empty($departure_place) ||
+    empty($departure_date) || empty($duration) || empty($price) || empty($available_places) || empty($trip))
+{     array_push($errors, "All fields are required");
+    }
 
-if (!empty($title) && !empty($description) && !empty($destination) && !empty($departure_place) &&
-    !empty($departure_date) && !empty($duration) && !empty($price) && !empty($available_places) && !empty($trip))
-{   
+    if ((strlen($duration) < 0) || (strlen(($price) < 0))||(strlen(($available_places)) < 0)) {
+        array_push($errors, "Enter A valid input");
+    }
     // Process the file upload
     if (move_uploaded_file($triptemp, $folder)) {
         // File uploaded successfully
@@ -49,6 +54,6 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
- 
-}
+$_SESSION["error"] = $errors;
+
 ?>
