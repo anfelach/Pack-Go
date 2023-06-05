@@ -9,6 +9,8 @@
             }
             if (isset($_POST["login"])) {
                 $email = $_POST["email"];
+                // user profile
+                $_SESSION['email'] = $email;
                 $pass= $_POST["psw"];
 
                 

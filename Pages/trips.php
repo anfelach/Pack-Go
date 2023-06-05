@@ -30,10 +30,10 @@ ini_set('display_startup_errors', 0);
     <!-- Libraries Stylesheet -->
     <link href="../lib/animate/animate.min.css" rel="stylesheet">
     <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link f="../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
-        <!-- Template Stylesheet -->
-        <link href="../css/trips.css" rel="stylesheet">
+     <!-- Stylesheet -->
+    <link href="../css/trips.css" rel="stylesheet">
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -120,43 +120,56 @@ ini_set('display_startup_errors', 0);
                 <div class="row g-4 justify-content-center">
                     
                     
-                <?php
-                $sql = "SELECT * FROM trips";
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    ?>
-                    <!-- start trip -->
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="package-item">
-                            <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/package-3.jpg" alt="">
-                            </div>
-                            <div class="d-flex border-bottom">
-                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo $row['destination']?></small>
-                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 <?php echo $row['duration'] ?> day(s)</small>
-                                <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i><?php echo $row['available_places']?> place(s)</small>
-                            </div>
-                            <div class="text-center p-4">
-                                <h3 class="mb-0"><?php echo $row['price']?> DA</h3>
-                                <div class="mb-3">
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
+                    <?php
+                    $sql = "SELECT * FROM trips";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $tripId = $row['id'];
+                        // echo $tripId;
+
+
+
+                        ?>
+                        <!-- start trip -->
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="package-item">
+                                <?php
+                                // Retrieve the profile picture path from the database
+                                    $tripPicturePath = $row['trip_url'];
+
+                                    // Generate the URL of the profile picture
+                                    $tripPictureURL = "../img/Upload/" . $tripPicturePath;
+                                    ?>
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="<?php echo $tripPictureURL; ?>" alt="">
                                 </div>
-                                <p><?php echo $row['description']?></p>
-                                <div class="d-flex justify-content-center mb-2">
-                                    <a href="#" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
-                                    <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
+                                <div class="d-flex border-bottom">
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo $row['destination']?></small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i><?php echo $row['duration'] ?> day(s)</small>
+                                    <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i><?php echo $row['available_places']?> place(s)</small>
+                                </div>
+                                <div class="text-center p-4">
+                                    <h3 class="mb-0"><?php echo $row['price']?> DA</h3>
+                                    <div class="mb-3">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                    <p><?php echo $row['description']?></p>
+                                    <div class="d-flex justify-content-center mb-2">
+
+                                    <a href="trip.php?id=<?php echo $tripId ; ?>" data-value="" id='readmore'  class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                        <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- end trip -->
-                    <?php };};
-                    ?>
+                        <!-- end trip -->
+                        <?php };};
+                        ?>
 
                 </div>
             </div>
@@ -164,8 +177,7 @@ ini_set('display_startup_errors', 0);
         <!-- Package End -->
 
 
-    <!-- Booking Start -->
-   <!-- Booking Start -->
+    
 
     <?php include "footer.php"; ?>
 
@@ -191,6 +203,10 @@ ini_set('display_startup_errors', 0);
 
      <script>
 
+
+
+
+
     function onPriceChange(event) {
 
       var maxPrice = $('#price').val(); 
@@ -202,7 +218,7 @@ ini_set('display_startup_errors', 0);
         method: 'POST',
         data: { 
           request1: maxPrice,
-      request2: destination
+          request2: destination
          }, 
         beforeSend: function () {
           $("#trips").html("<span>Working...</span>");

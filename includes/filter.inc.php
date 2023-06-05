@@ -32,12 +32,19 @@ include("../php/dbconnect.php");
             <!-- start trip -->
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="package-item">
+                <?php
+                             // Retrieve the profile picture path from the database
+                                $tripPicturePath = $row['trip_url'];
+
+                                // Generate the URL of the profile picture
+                                $tripPictureURL = "../img/Upload/" . $tripPicturePath;
+                                ?>
                     <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/package-3.jpg" alt="">
+                        <img class="img-fluid" src="<?php echo $tripPictureURL; ?>" alt="">
                     </div>
                     <div class="d-flex border-bottom">
                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo $row['destination']?></small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 <?php echo $row['duration']?> day(s)</small>
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i> <?php echo $row['duration']?> day(s)</small>
                         <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i><?php echo $row['available_places']?> place(s)</small>
                     </div>
                     <div class="text-center p-4">
@@ -63,8 +70,8 @@ include("../php/dbconnect.php");
 
         </div>
 <?php
-    // else {
-    //     echo "No trips found.";
+     //else {
+      //  echo "No trips found.";
     // }
 
 ?>

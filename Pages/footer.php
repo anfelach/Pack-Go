@@ -65,22 +65,22 @@ require_once '../php/dbconnect.php';
                             <h4 class="text-white mb-3">Gallery</h4>
                             <div class="row g-2 pt-2">
                                 <div class="col-4">
-                                    <img class="img-fluid bg-light p-1" src="img/package-1.jpg" alt="">
+                                    <img class="img-fluid bg-light p-1" src="" alt="">
                                 </div>
                                 <div class="col-4">
-                                    <img class="img-fluid bg-light p-1" src="img/package-2.jpg" alt="">
+                                    <img class="img-fluid bg-light p-1" src="" alt="">
                                 </div>
                                 <div class="col-4">
-                                    <img class="img-fluid bg-light p-1" src="img/package-3.jpg" alt="">
+                                    <img class="img-fluid bg-light p-1" src="" alt="">
                                 </div>
                                 <div class="col-4">
-                                    <img class="img-fluid bg-light p-1" src="img/package-2.jpg" alt="">
+                                    <img class="img-fluid bg-light p-1" src="" alt="">
                                 </div>
                                 <div class="col-4">
-                                    <img class="img-fluid bg-light p-1" src="img/package-3.jpg" alt="">
+                                    <img class="img-fluid bg-light p-1" src="" alt="">
                                 </div>
                                 <div class="col-4">
-                                    <img class="img-fluid bg-light p-1" src="img/package-1.jpg" alt="">
+                                    <img class="img-fluid bg-light p-1" src="" alt="">
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@ require_once '../php/dbconnect.php';
                             </div>
                             <div class="col-md-6 text-center text-md-end">
                                 <div class="footer-menu">
-                                    <a href="">Home</a>
+                                    <a href="../index.php">Home</a>
                                     <a href="">Cookies</a>
                                     <a href="">Help</a>
                                     <a href="">FQAs</a>
